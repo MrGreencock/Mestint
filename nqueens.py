@@ -1,5 +1,3 @@
-from numpy.ma.extras import average
-
 from hanoi import (Problem, Node)
 
 class NQueens(Problem):
