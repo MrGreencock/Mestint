@@ -247,10 +247,12 @@ def main():
     for i in range(3,9):
         lista.append(depth_first_graph_search(Hanoi(i)))
 
-    print(lista)
+    #print(lista)
     x = [3, 4, 5, 6, 7, 8]
     plt.plot(x, lista)
+    plt.title("Hanoi tornya DFS-sel 3-8 koronggal")
     plt.show()
+    
 
 
 
