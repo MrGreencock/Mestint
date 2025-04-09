@@ -78,7 +78,6 @@ for i in range(board_size):
     print()"""
 
 
-
 board = []
 for i in range(queens):
         board = [-1] * queens
@@ -95,7 +94,6 @@ for i in range(len(graph)):
 
 
 node_colors = []
-labels = {}
 for node in G.nodes:
     if node in board:
         node_colors.append('red')
