@@ -12,8 +12,8 @@ import random
 
 
 def is_consistent(graph, position):
-    for i in range(len(position)):
-        for j in range(i+1,len(position)):
+    for i in range(len(graph)):
+        for j in range(i+1,len(graph)):
             if graph[position[i]][position[j]] == 1:
                 return False
 
@@ -88,9 +88,9 @@ for i in range(queens):
 
 G = nx.Graph()
 for i in range(len(graph)):
-    for j in range(i+1, len(graph)):
+    for j in range(i, len(graph)):
         if graph[i][j]:
-            G.add_edge(i+1, j+1)
+            G.add_edge(i, j)
 
 
 node_colors = []
