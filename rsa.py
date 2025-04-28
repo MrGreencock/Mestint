@@ -141,10 +141,10 @@ def main():
     m = 23
     c = encryption_rsa(m,e,n)
     s = signature(m,d,p,q)
-    print(c)
-    print(decryption_rsa(c,d,p,q))
-    print(s)
-    print(verification(s,e,n))
+    print(f"Encrypted message: {c}")
+    print(f"Original message: {decryption_rsa(c,d,p,q)}")
+    print(f"Signatured message: {s}")
+    print(f"Verified message: {verification(s,e,n)}")
 
 
 
