@@ -141,7 +141,7 @@ def main():
     m = 23
     c = encryption_rsa(m,e,n)
     s = signature(m,d,p,q)
-    print(encryption_rsa(m,e,n))
+    print(c)
     print(decryption_rsa(c,d,p,q))
     print(s)
     print(verification(s,e,n))
