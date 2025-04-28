@@ -1,6 +1,5 @@
 import random
 
-
 def ea(a,b,d=0):
     d = a
     while b!=0:
@@ -117,6 +116,13 @@ def decryption_rsa(c, d, p, q):
     return crt(c,d,p,q) % (p*q)
 
 
+def signature(m, d, p, q):
+    return crt(m,d,p,q) % (p*q)
+
+def verification(c,e,n):
+    return fe(c,e,n) % n
+
+
 def main():
     while True:
         p = generatePrime(1000, [2, 3])
@@ -134,8 +140,11 @@ def main():
     print(f"{pk}, {sk}")
     m = 23
     c = encryption_rsa(m,e,n)
+    s = signature(m,d,p,q)
     print(encryption_rsa(m,e,n))
     print(decryption_rsa(c,d,p,q))
+    print(s)
+    print(verification(s,e,n))
 
 
 
