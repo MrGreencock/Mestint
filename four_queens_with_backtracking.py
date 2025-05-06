@@ -12,8 +12,8 @@ import random
 
 
 def is_consistent(graph, position):
-    for i in range(len(graph)):
-        for j in range(i+1,len(graph)):
+    for i in range(len(position)):
+        for j in range(i+1,len(position)):
             if graph[position[i]][position[j]] == 1:
                 return False
 
@@ -88,7 +88,7 @@ for i in range(queens):
 
 G = nx.Graph()
 for i in range(len(graph)):
-    for j in range(i, len(graph)):
+    for j in range(i+1, len(graph)):
         if graph[i][j]:
             G.add_edge(i, j)
 
@@ -104,10 +104,3 @@ pos = nx.spring_layout(G)
 nx.draw(G, with_labels=True,node_color=node_colors, node_size=800, font_size=16, font_color='black')
 plt.title("4 Királynő problémája")
 plt.show()
-
-
-
-
-
-
-

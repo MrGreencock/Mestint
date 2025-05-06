@@ -171,48 +171,12 @@ class Hanoi(Problem):
         # Előtte és utánna lévő korongok helyeinek összefűzése
         return state[0:disk] + char + state[disk + 1:]
 
-def breadth_first_tree_search(problem):
-    # kezdő állapot kiolvasása és FIFO sorba helyezése
+def breadth_first_graph_search(problem):
     frontier = deque([Node(problem.initial)])
-    c = 0
 
-    # Amig nem értük el a határt
     while frontier:
-        c += 1
-        # legszélsőbb elem kiemelése
         node = frontier.popleft()
-
-        # ha cél állapotban vagyunk akkor vége
-        if problem.goal_test(node.state):
-            return c
-
-        # A kiemelt elemből az összes új állapot legyártása az operátorok segítségével
-        frontier.extend(node.expand(problem))
-        #print(node.state)
-
-def depth_first_graph_search(problem):
-    # Kezdő elem verembe helyezése
-    frontier = [(Node(problem.initial))]
-    # halmaz deklarálása a már bejárt elemekhez
-    explored = set()
-    c = 0
-    # Amig tudunk mélyebre menni
-    while frontier:
-        c += 1
-        # Legfelső elem kiemelése a veremből
-        node = frontier.pop()
-
-        # ha cél állapotban vagyunk vége
-        if problem.goal_test(node.state):
-            return c
-
-        # állapot feljegyzése hogy tudjuk hogy már jártunk itt
-        explored.add(node.state)
-
-        # verem bővítése amig benemjárt elemekkel
-        frontier.extend(child for child in node.expand(problem)
-                        if child.state not in explored and child not in frontier)
-        #print(node.state)
+        if node.
 
 def trial_error(problem):
     """
