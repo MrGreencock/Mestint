@@ -32,7 +32,7 @@ class NeuralNetworkAgent:
             layers.Input(shape=(self.state_dim, )),
             layers.Dense(128, activation="relu"),
             layers.Dense(128, activation="relu"),
-            layers.Dense(128, activation="relu"),
+            #layers.Dense(128, activation="relu"),
             layers.Dense(self.action_dim)])
 
     def act(self, state, epsilon):
